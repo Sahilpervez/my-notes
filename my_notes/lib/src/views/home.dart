@@ -6,6 +6,7 @@ import 'package:my_notes/src/services/local_db.dart';
 import 'package:my_notes/src/views/create_note.dart';
 import 'package:my_notes/src/views/widgets/empty_view.dart';
 import 'package:my_notes/src/views/widgets/note_list.dart';
+import 'package:my_notes/src/views/widgets/notes_grid.dart';
 
 class HomeView extends StatefulWidget {
   const HomeView({super.key});
@@ -54,7 +55,11 @@ class _HomeViewState extends State<HomeView> {
                 return const EmptyView();
               }
               final notes = snapshot.data;
-              return NotesListBuilder(notes: notes!);
+              if(notes!.isEmpty){
+                return const EmptyView();
+              }
+             return (isListView)?
+             NotesListBuilder(notes: notes):NotesGrid(notes: notes);
             }
           )
         ],

@@ -3,30 +3,33 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:my_notes/src/model/note.dart';
 import 'package:my_notes/src/views/create_note.dart';
 
-class NotesGridItem extends StatelessWidget {
-  const NotesGridItem({super.key, required this.note});
+
+class NoteGridItem extends StatelessWidget {
+  const NoteGridItem({super.key, required this.note});
+
   final Note note;
+
   @override
   Widget build(BuildContext context) {
     return MaterialButton(
       onPressed: () {
-        Navigator.of(context).push(MaterialPageRoute(
-            builder: (context) => CreateNotesView(
-                  note: note,
-                )));
+        Navigator.of(context).push(MaterialPageRoute(builder: (context) => CreateNotesView(note: note,)));
       },
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(10),
+      ),
       padding: EdgeInsets.zero,
       color: Colors.white,
+      elevation: 0.0,
       child: Container(
+        padding: const EdgeInsets.all(20.0),
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(15),
+          borderRadius: BorderRadius.circular(10),
           border: Border.all(
-            width: 2,
             color: Colors.grey.shade300,
+            width: 2,
           ),
         ),
-        padding: const EdgeInsets.all(20),
         child: Row(
           children: [
             Expanded(
@@ -35,8 +38,9 @@ class NotesGridItem extends StatelessWidget {
                 children: [
                   Text(
                     note.title,
-                    style: GoogleFonts.poppins(fontSize: 18),
-                    maxLines: 1,
+                    style: GoogleFonts.poppins(
+                      fontSize: 18,fontWeight: FontWeight.w500),
+                    maxLines: 2,
                   ),
                   Flexible(
                     child: Text(

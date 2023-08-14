@@ -50,7 +50,8 @@ class NoteListItem extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(note.title,
-                          style: GoogleFonts.poppins(fontSize: 20)),
+                          style: GoogleFonts.poppins(fontSize: 20,fontWeight: 
+                          FontWeight.w500)),
                       Text(
                         note.description,
                         style: GoogleFonts.poppins(fontSize: 15),
