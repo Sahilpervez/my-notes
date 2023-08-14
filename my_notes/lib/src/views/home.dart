@@ -6,7 +6,6 @@ import 'package:my_notes/src/services/local_db.dart';
 import 'package:my_notes/src/views/create_note.dart';
 import 'package:my_notes/src/views/widgets/empty_view.dart';
 import 'package:my_notes/src/views/widgets/note_list.dart';
-import 'package:my_notes/src/views/widgets/note_list_item.dart';
 
 class HomeView extends StatefulWidget {
   const HomeView({super.key});

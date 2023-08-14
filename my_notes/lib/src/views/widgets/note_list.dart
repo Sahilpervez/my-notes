@@ -10,7 +10,7 @@ class NotesListBuilder extends StatelessWidget {
     return Expanded(
       child: ListView.builder(
                     padding: EdgeInsets.all(20),
-                    itemCount: notes!.length,
+                    itemCount: notes.length,
                     itemBuilder: (ctx,idx){
                     return NoteListItem(note: notes[idx],);
                   }),
