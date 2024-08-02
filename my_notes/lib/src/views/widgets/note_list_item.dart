@@ -13,6 +13,7 @@ class NoteListItem extends StatelessWidget {
       children: [
         MaterialButton(
             padding: EdgeInsets.zero,
+            color: Colors.white,
             onLongPress: () {
               showModalBottomSheet(
                 backgroundColor: Colors.white,
@@ -38,12 +39,12 @@ class NoteListItem extends StatelessWidget {
             },
             shape:
                 RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
-            elevation: 1,
+            elevation: 0,
             child: Container(
               padding: const EdgeInsets.all(20),
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(15),
-                  border: Border.all(width: 2, color: Colors.grey.shade300)),
+                  border: Border.all(width: 1, color: Colors.grey.shade300)),
               child: Row(children: [
                 Expanded(
                   child: Column(
